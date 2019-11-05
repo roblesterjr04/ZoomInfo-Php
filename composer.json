@@ -1,0 +1,32 @@
+{
+    "name": "rob-lester-jr04/zoom-info-php",
+    "description": "A PHP SDK for consuming the ZoomInfo Enrichment API",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Robert Lester",
+            "email": "robertlesterjr@mac.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "require-dev": {
+      "orchestra/testbench": ">=3.5",
+      "phpunit/phpunit": ">=6.0"
+    },
+    "autoload": {
+      "psr-4": {
+        "ZoomInfo\\": "src"
+      }
+    },
+    "scripts": {
+      "test": "./vendor/bin/phpunit --bootstrap ./vendor/autoload.php"
+  },
+  "config": {
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "optimize-autoloader": true
+  }
+}
