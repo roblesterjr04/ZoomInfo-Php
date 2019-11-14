@@ -22,6 +22,7 @@ class Request
 
     public function __call($fn, $payload)
     {
+        $payload = $payload ?: [''];
         $response = $this->client->$fn($this->model, [
             'json' => $payload[0],
             'headers' => [
