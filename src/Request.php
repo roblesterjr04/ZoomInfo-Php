@@ -20,16 +20,20 @@ class Request
         $this->authenticate();
     }
 
-    public function __call($fn, $payload)
+    public function __call($fn, $payload = null)
     {
-        $payload = $payload ?: [''];
-        $response = $this->client->$fn($this->model, [
-            'json' => $payload[0],
-            'headers' => [
-                'Authorization' => 'Bearer ' . $this->token,
-                'Content-type' => 'application/json'
-            ]
-        ]);
+        $headers = [
+            'Authorization' => 'Bearer ' . $this->token,
+            'Content-type' => 'application/json'
+        ];
+        
+        $body = [
+            'json' => $payload ? $payload[0] : [],
+            'headers' => $headers,
+        ];
+        if ($payload == null) unset($body['json']);
+
+        $response = $this->client->$fn($this->model, $body);
 
         return json_decode($response->getBody());
     }

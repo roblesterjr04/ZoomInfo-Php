@@ -7,8 +7,12 @@ class ZoomInfoTest extends TestCase
 {
     public function testAuthentication()
     {
-        $zi = new ZoomInfo([]);
+        $zi = new ZoomInfo([
+
+        ]);
 
         $this->assertTrue($zi != null);
+
+        
     }
 }
