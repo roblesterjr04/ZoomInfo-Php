@@ -19,9 +19,9 @@ abstract class Model
         $this->request = new Request($base->basePath, $this->basePath, $base->base->auth);
     }
 
-    public function getFields($type)
+    public function getFields()
     {
-        $fieldRequest = new Request("lookup/inputfields/$basePath", $base->basePath, $base->base->auth);
+        $fieldRequest = new Request("lookup/inputfields/{$this->basePath}", $base->basePath, $base->base->auth);
 
         return $fieldRequest->get();
     }
