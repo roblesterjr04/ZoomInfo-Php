@@ -1,4 +1,4 @@
 /vendor
 /composer.lock
 /.git
-phpunit.xml
+/phpunit.xml
