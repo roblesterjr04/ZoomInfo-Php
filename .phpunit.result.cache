@@ -1,1 +1,0 @@
-C:37:"PHPUnit\Runner\DefaultTestResultCache":180:{a:2:{s:7:"defects";a:1:{s:32:"ZoomInfoTest::testAuthentication";i:4;}s:5:"times";a:2:{s:32:"ZoomInfoTest::testAuthentication";d:2.307;s:28:"ZoomInfoTest::testGetCompany";d:1.931;}}}

@@ -20,17 +20,6 @@ class ZoomInfoTest extends TestCase
             ],
             'outputFields' => [
                 'name',
-                'revenue',
-                'employeeCount',
-                'logo',
-                'website',
-                'createdDate',
-                'companyStatus',
-                'companyStatusDate',
-                'phone',
-                'descriptionList',
-                'country',
-                'ticker'
             ]
         ]);
 
