@@ -4,10 +4,15 @@ namespace ZoomInfo;
 
 class ZoomInfo
 {
-    public function __construct(Array $auth)
+    public function __construct(Array $auth, $settings = [])
     {
 
-        $GLOBALS['auth'] = $auth;
+        $defaults = [
+            'timeout' => 30,
+        ];
+
+        $GLOBALS['zi_settings'] = array_merge($defaults, $settings);
+        $GLOBALS['zi_auth'] = $auth;
 
     }
 

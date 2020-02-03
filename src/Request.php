@@ -15,7 +15,8 @@ class Request
     {
         $this->model = $model;
         $this->client = new Client([
-            'base_uri' => "https://api.zoominfo.com/$endpoint/"
+            'base_uri' => "https://api.zoominfo.com/$endpoint/",
+            'timeout' => $GLOBALS['zi_settings']['timeout'],
         ]);
         $this->authenticate();
     }
@@ -26,7 +27,7 @@ class Request
             'Authorization' => 'Bearer ' . $this->token,
             'Content-type' => 'application/json'
         ];
-        
+
         $body = [
             'json' => $payload ? $payload[0] : [],
             'headers' => $headers,
@@ -41,7 +42,7 @@ class Request
     private function authenticate()
 	{
 		$response = $this->client->post('https://api.zoominfo.com/authenticate', [
-			'json' => $GLOBALS['auth']
+			'json' => $GLOBALS['zi_auth']
 		]);
 		$jwt = json_decode($response->getBody());
 		$this->token = $jwt->jwt;

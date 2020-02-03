@@ -8,7 +8,7 @@ use ZoomInfo\Request;
 abstract class Model
 {
     private $base;
-    private $request;
+    protected $request;
 
     public $basePath;
 
@@ -26,7 +26,7 @@ abstract class Model
         return $fieldRequest->get();
     }
 
-    public function get($payload)
+    public function get($payload = [])
     {
         $response = $this->request->post($payload);
         return $response;
